@@ -1,0 +1,212 @@
+##
+#
+# AROMA Installer - AROMA Configuration
+#       (c) 2011 by Ahmad Amarullah
+#           amarullz - xda-developers
+#           http://www.amarullz.com/
+#
+#       Version 1.6
+#
+# INFO:
+#   <aroma-assets> = META-INF/com/google/android/aroma
+#   <dp>           = Device Pixelate. WVGA/QHD = 3, HVGA = 2.
+#                    dp calculated with = round(min(width,height) / 160)
+#   <aroma-tmp>    = /tmp/aroma-data/
+#
+##
+#ini_set("force_colorspace","rgba");
+
+calibrate("0.8291","14","0.9803","7");
+
+ini_set("customkeycode_up",     "115");
+ini_set("customkeycode_down",   "114");
+ini_set("customkeycode_select", "102");
+ini_set("customkeycode_menu",   "139");
+ini_set("customkeycode_back",   "158");
+    
+#### 
+# ENGLISH		
+####	
+	
+	ini_set("text_ok","OK");
+	ini_set("text_next","Next");
+	ini_set("text_back","Back");
+	setvar("themetitel","Choose a Theme");
+	setvar("themetitel_sub","This theme will only be used for the installation");
+	
+	setvar("welcome","Welcome to the Installation");
+  	setvar("info","You will now install MIUI-V4 for the Galaxy SLC\n\n"+
+    "  NAME : <#080>MIUI</#>\n"+
+    "  VERSION : <#080>v4</#>\n"+
+    "  DEV : <#080>TheFrankenstain and LoLaTiOn</#>\n\n\n\n"+
+    "Please press Next to continue the installation");
+    
+    setvar("romoptions","Options");
+    setvar("romoptions_sub","Choose one of the following options");
+    setvar("fullwipe","Factory Reset");
+    setvar("fullwipe_sub","This method will erase all of your data and settings.");
+    setvar("nonwipe","Erase Cache/Dalvik-Cache");
+    setvar("nonwipe_sub","Only cache and dalvik-cache will be erased. Your data will be saved.");
+    
+    setvar("installtype","Installation method");
+    setvar("installtype_sub","Choose your favoured installation method.");
+    setvar("custom","Customize");
+    setvar("custom_sub","Choose the Kernel on your own.");
+
+    setvar("storage","storage");       
+    setvar("storage_sub","Sharing storage");
+	setvar("normal_sto","Original systeme");
+    setvar("changed_sto","Enable exchange of stockage SD");
+       
+    setvar("kernel_sub","Choose one of the following Kernels");
+    setvar("vurrut_sub","vurrut v1.8");
+    setvar("dhiru_sub","dhiru 2.6.35.7 11 Jun");
+	setvar("UC_sub","UC_V16");
+	setvar("alfrix_sub","alfrix 2.6.35.7 2 Jui");
+		   
+    setvar("vinstall","Ready for installation");
+    setvar("vinstall_sub","All informations were collected. MIUI can be installed.\n\n"+
+  	"Press Next to start the installation...");
+  	
+  	setvar("install","Installation");
+  	setvar("install_sub","Installing MIUI...\nWait please!...");
+  	
+  	setvar("installcomplete","Installation completed!");
+  	setvar("installcomplete_sub","<#080>Congratulations...</#>\n\n"+
+    "MIUI-V4 installed\n"+
+    "Press Finish and restart your phone.\n\nThanks\n\n");
+    
+
+  theme("miui");
+
+
+##
+# Initializing Rom Information
+#
+ini_set("rom_name",             "MIUI");
+ini_set("rom_version",          "V4");
+ini_set("rom_author",           "TheFrankenstain and LoLaTiOn");
+ini_set("rom_device",           "Samsung Galaxy SLC");
+
+##
+# Show Splash for 4 seconds ( 1000 = 1 sec )
+#
+splash(4000, "sample");
+
+###################
+# Ecran d'accueil #
+###################
+
+# Arguments:
+#   1. Title Text ( max: 31 chars )
+#   2. Text To Show In Window ( max: 1023 chars )
+#   3. PNG Icons, relative to <aroma-assets> ( max width & height: 70 * <dp> )
+#
+viewbox(
+    getvar("welcome"),
+    getvar("info"),
+    "icons/info"
+);
+
+#######################################
+# Factory Reset / Cache /Dalvik Cache #
+#######################################
+
+selectbox(
+    getvar("romoptions"),
+    
+    getvar("romoptions_sub"),
+
+    "icons/personalize",
+  
+    "romoptions.prop",
+   
+    getvar("romoptions"),"",2,
+      
+    getvar("fullwipe"),getvar("fullwipe_sub"),1,
+      
+    getvar("nonwipe"),getvar("nonwipe_sub"),0
+);
+
+###########
+# Storage #
+###########
+
+selectbox(
+    getvar("storage"),
+  
+    getvar("storage_sub"),
+  
+    "icons/personalize",
+  
+    "storage.prop",
+  
+    "storage","",2,
+      
+    getvar("normal_sto"),"",0,  #1.1
+      
+    getvar("changed_sto"),"",1  #1.2
+
+);
+
+##########
+# Kernel #
+##########
+
+selectbox(
+    "Kernel",
+    getvar("kernel_sub"),
+    "icons/personalize",
+    "kernels.prop",
+  
+    "Kernel","",2,
+      
+    "Vurrut_ker",getvar("vurrut_sub"),0, #1.1
+      
+    "Dhiru_ker",getvar("dhiru_sub"),1,     #1.2
+	
+	"UC_ker",getvar("UC_sub"),0,     #1.3
+	
+	"Alfrix_ker",getvar("alfrix_sub"),0     #1.4
+		
+);
+
+#######################
+# InstallationViewBox #
+#######################
+
+viewbox(
+
+  getvar("vinstall"),
+  
+  getvar("vinstall_sub"),
+  
+  "icons/info"
+);
+
+########################
+# Installation process #
+########################
+
+install(
+    getvar("install"),
+    
+    getvar("install_sub"), 
+    
+    "icons/install"
+);
+
+#################
+# Finish Screen	#
+#################
+
+	ini_set("text_next", "Finish");
+
+viewbox(
+
+  getvar("installcomplete"),
+  
+  getvar("installcomplete_sub"),
+  
+  "icons/info"
+);
