@@ -20,6 +20,7 @@ Maintainers (CyanogenMod 9):
 * Motorola Xoom (stingray): TDR, Steady Hawkin, Bazar6 (Team Rogue)
 * Motorola Xoom (wingray): TDR, Steady Hawkin, Bazar6 (Team Rogue)
 * Samsung Epic 4G (SPH-D700): noobnl, Decad3nce, mkasick, UberPinguin, wtogami, bbelos (Team Epic)
+* Samsung Fascinate (SCH-I500): sbrissen, jt1134
 * Samsung Galaxy Note (GT-N7000): Entropy512, xplodwild
 * Samsung Galaxy Note AT&T (SGH-I717): cyanogen
 * Samsung Galaxy S (GT-I9000): pawitp
@@ -29,9 +30,16 @@ Maintainers (CyanogenMod 9):
 * Samsung Galaxy S II Skyrocket (SGH-I727): David Ferguson (dferg)
 * Samsung Galaxy S II T-Mobile (SGH-T989): Mike Grissom (mikeyman77)
 * Samsung Galaxy S III (GT-I9300): codeworkx, xplodwild
+* Samsung Galaxy S III (SGH-I747 - AT&T): Unhelpful, cyanogen
+* Samsung Galaxy S III (SGH-T999 - T-Mobile): cyanogen
+* Samsung Galaxy S III (SPH-L710 - Sprint): noobnl, mkasick (Team Epic)
 * Samsung Galaxy Tab 10.1: cyanogen, pershoot
 * Samsung Galaxy Tab 8.9: kallt_kaffe
+* Samsung Galaxy Tab 2 7" (GT-P31XX): codeworkx
+* Samsung Galaxy Tab 2 10.1" (GT-P51XX): codeworkx
 * Samsung Galaxy Tab 7: cdesai, humberos, jt1134
+* Samsung Galaxy Tab 8.9: kallt_kaffe
+* Samsung Galaxy Tab 10.1: cyanogen, pershoot
 * Samsung Vibrant (SGH-T959): FaultException
 * Sony Xperia Arc (LT15i): Bin4ry,defer,jerpelea (FreeXperia team)
 * Sony Xperia Neo (MT15i): Bin4ry,defer,jerpelea (FreeXperia team)

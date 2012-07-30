@@ -60,7 +60,7 @@ ini_set("customkeycode_back",   "158");
        
     setvar("kernel_sub","Choose one of the following Kernels");
     setvar("vurrut_sub","vurrut v1.8");
-    setvar("dhiru_sub","dhiru 2.6.35.7 11 Jun");
+    setvar("dhiru_sub","dhiru 2.6.35.7 24 Jui");
 	setvar("UC_sub","UC_V16");
 	setvar("alfrix_sub","alfrix 2.6.35.7 2 Jui");
 		   
